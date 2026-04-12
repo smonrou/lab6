@@ -1,4 +1,4 @@
-package com.model;
+package com.cunori.bd.laboratorio.lab6.model;
 
 public enum Periodicidad {
     MENSUAL,
