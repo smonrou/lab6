@@ -1,6 +1,6 @@
 package com.model;
 
-public enum periodicidad {
+public enum Periodicidad {
     MENSUAL,
     TRIMESTRAL,
     SEMESTRAL,

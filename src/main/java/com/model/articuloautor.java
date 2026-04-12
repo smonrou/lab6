@@ -1,6 +1,6 @@
 package com.model;
 
-public class articuloautor {
+public class ArticuloAutor {
 
     private String doiArticulo;
     private Long idAutor;

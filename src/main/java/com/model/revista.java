@@ -1,6 +1,6 @@
 package com.model;
 
-public class revista {
+public class Revista {
 
 	private String issn;
 	private String nombre;
@@ -8,7 +8,7 @@ public class revista {
 	private Integer numeroEdicion;
 	private Integer anioPublicacion;
 	private String idioma;
-	private periodicidad periodicidad;
+	private Periodicidad periodicidad;
 	private String urlPortada;
 
     public String getIssn() {
@@ -59,11 +59,11 @@ public class revista {
         this.idioma = idioma;
     }
 
-    public periodicidad getPeriodicidad() {
+    public Periodicidad getPeriodicidad() {
         return periodicidad;
     }
 
-    public void setPeriodicidad(periodicidad periodicidad) {
+    public void setPeriodicidad(Periodicidad periodicidad) {
         this.periodicidad = periodicidad;
     }
 

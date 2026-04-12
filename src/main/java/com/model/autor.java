@@ -1,6 +1,6 @@
 package com.model;
 
-public class autor {
+public class Autor {
 
     private Long id;
     private String nombreCompleto;

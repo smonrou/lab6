@@ -2,7 +2,7 @@ package com.model;
 
 import java.time.LocalDate;
 
-public class articulo {
+public class Articulo {
 
     private String doi;
     private String titulo;
