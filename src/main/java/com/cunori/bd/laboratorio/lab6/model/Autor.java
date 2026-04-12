@@ -1,12 +1,36 @@
-package com.model;
+package com.cunori.bd.laboratorio.lab6.model;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Autor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+
+    @Column(name = "nombre_completo", nullable = false)
     private String nombreCompleto;
+
+    @Column(unique = true)
     private String correo;
+
+    @Column
     private String afiliacion;
+
+    @Column(length = 100)
     private String pais;
+
+    @JdbcTypeCode(SqlTypes.LONGVARCHAR)
+    @Column
     private String biografia;
 
     public Long getId() {

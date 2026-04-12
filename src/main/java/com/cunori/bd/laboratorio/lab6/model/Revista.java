@@ -1,15 +1,39 @@
-package com.model;
+package com.cunori.bd.laboratorio.lab6.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+
+@Entity
 public class Revista {
 
-	private String issn;
-	private String nombre;
-	private String tematica;
-	private Integer numeroEdicion;
-	private Integer anioPublicacion;
-	private String idioma;
-	private Periodicidad periodicidad;
-	private String urlPortada;
+    @Id
+    @Column(length = 20)
+    private String issn;
+
+    @Column(nullable = false)
+    private String nombre;
+
+    @Column
+    private String tematica;
+
+    @Column(name = "numero_edicion")
+    private Integer numeroEdicion;
+
+    @Column(name = "anio_publicacion")
+    private Integer anioPublicacion;
+
+    @Column(length = 50)
+    private String idioma;
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    private Periodicidad periodicidad;
+
+    @Column(name = "url_portada", columnDefinition = "TEXT")
+    private String urlPortada;
 
     public String getIssn() {
         return issn;
