@@ -1,0 +1,25 @@
+info:
+  name: Artículos de una revista
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://localhost:8080/api/revistas/1234-5678/articulos?page=0&size=10&sort=fechaPublicacion,desc
+  params:
+    - name: page
+      value: "0"
+      type: query
+    - name: size
+      value: "10"
+      type: query
+    - name: sort
+      value: fechaPublicacion,desc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

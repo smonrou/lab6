@@ -1,0 +1,25 @@
+info:
+  name: Actualizar Artículo
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: http://localhost:8080/api/articulos/10.3456
+  body:
+    type: json
+    data: |-
+      {
+        "articulo": {
+          "estado": "ACEPTADO",
+          "numeroPaginas": 25
+        },
+        "participaciones": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
