@@ -33,7 +33,7 @@ el autor es el autor corresponsal.
 
 ## Objetivos cumplidos por el estudiante
 - Se comprendió la funcionalidad de JPA
-- Se reforzaron los conociemientos sobre paginación
+- Se reforzaron los conociemientos sobre paginación con JPA
 - Manejo de excepciones globales en respuestas http
 - Reforzamiento de manejo e implementación del modelo MVC
 
@@ -55,6 +55,9 @@ En la capeta `src/main/resources/Bruno` se encuentran todos los folders con los 
 Extraer o abrir desde Bruno para probarlos.
 
 ## Aclaración
-Los inserts de la base de datos fueron realizados con IA con el proposito de tener suficientes datos de prueba.
+- El DLL y DML se encuentran en  `src/main/resources/`
+- Cambiar los datos de acceso a la base de datos
+- La Clase `src/main/.../controller/GlobalExceptionHandler.java` existe con la única finalidad de hacer más sencillo el diagnosticar un error en el testing
+- Los inserts de la base de datos fueron realizados con IA con el proposito de tener suficientes datos de prueba.
 
 ## Fecha de Entrega: 17/04/2026
