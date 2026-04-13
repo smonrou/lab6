@@ -9,7 +9,9 @@ import com.cunori.bd.laboratorio.lab6.model.ArticuloAutorId;
 
 public interface ArticuloAutorRepository extends JpaRepository<ArticuloAutor, ArticuloAutorId> {
 
-    List<ArticuloAutor> findByDoiArticulo(String doiArticulo);
+    List<ArticuloAutor> findByDoiArticuloOrderByOrdenAutoriaAsc(String doiArticulo);
 
     List<ArticuloAutor> findByIdAutor(Long idAutor);
+
+    void deleteByDoiArticulo(String doiArticulo);
 }
