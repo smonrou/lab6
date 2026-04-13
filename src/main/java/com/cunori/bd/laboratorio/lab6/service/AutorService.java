@@ -30,9 +30,6 @@ public class AutorService {
         return autorRepository.findAll();
     }
 
-    /**
-     * Artículos en los que participa el autor (paginado).
-     */
     public Page<Articulo> listarArticulosPorAutor(Long idAutor, Pageable pageable) {
         if (!autorRepository.existsById(idAutor)) {
             throw new EntityNotFoundException("Autor no encontrado: " + idAutor);
@@ -40,10 +37,6 @@ public class AutorService {
         return articuloRepository.findByAutorId(idAutor, pageable);
     }
 
-    /**
-     * Actualización parcial: solo los campos no nulos de {@code datosParciales} se
-     * aplican. Debe incluir {@link Autor#getId()}.
-     */
     @Transactional
     public Autor actualizar(Autor datosParciales) {
         if (datosParciales.getId() == null) {

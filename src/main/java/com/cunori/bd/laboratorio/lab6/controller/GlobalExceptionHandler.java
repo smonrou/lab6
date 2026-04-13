@@ -1,6 +1,5 @@
 package com.cunori.bd.laboratorio.lab6.controller;
 
-// src/main/java/com/cunori/bd/laboratorio/lab6/controller/GlobalExceptionHandler.java
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

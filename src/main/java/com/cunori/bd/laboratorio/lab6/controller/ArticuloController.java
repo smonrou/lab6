@@ -37,9 +37,7 @@ public class ArticuloController {
         this.articuloService = articuloService;
     }
 
-    /**
-     * Lista o busca por título (LIKE, opcional). Parámetro {@code titulo}; paginación estándar.
-     */
+
     @GetMapping
     public Page<Articulo> buscar(@RequestParam(required = false) String titulo, Pageable pageable) {
         return articuloService.buscarPorTitulo(titulo, pageable);
@@ -91,7 +89,6 @@ public class ArticuloController {
         return aa;
     }
 
-    /** JSON: {@code { "articulo": {...}, "participaciones": [...] }} */
     public static class CuerpoCrearArticulo {
         private Articulo articulo;
         private List<ParticipacionEntrada> participaciones;
@@ -113,10 +110,6 @@ public class ArticuloController {
         }
     }
 
-    /**
-     * JSON: {@code { "articulo": {...}, "participaciones": [...] }} — participaciones nulas = no cambiar
-     * autores.
-     */
     public static class CuerpoActualizarArticulo {
         private Articulo articulo;
         private List<ParticipacionEntrada> participaciones;

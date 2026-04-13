@@ -37,10 +37,6 @@ public class ArticuloService {
         this.articuloAutorRepository = articuloAutorRepository;
     }
 
-    /**
-     * Búsqueda por título (LIKE, sin distinguir mayúsculas). Si {@code titulo} es
-     * null o vacío, lista todos (paginado).
-     */
     public Page<Articulo> buscarPorTitulo(String titulo, Pageable pageable) {
         if (titulo == null || titulo.isBlank()) {
             return articuloRepository.findAll(pageable);
@@ -53,10 +49,6 @@ public class ArticuloService {
                 .orElseThrow(() -> new EntityNotFoundException("Artículo no encontrado: " + doi));
     }
 
-    /**
-     * Participaciones ordenadas; cada fila expone {@link ArticuloAutor#getAutor()}
-     * para el detalle con autores.
-     */
     public List<ArticuloAutor> listarParticipacionesPorDoi(String doi) {
         if (!articuloRepository.existsById(doi)) {
             throw new EntityNotFoundException("Artículo no encontrado: " + doi);
@@ -80,12 +72,6 @@ public class ArticuloService {
         return articuloRepository.findById(articulo.getDoi()).orElseThrow();
     }
 
-    /**
-     * Actualización parcial: en {@code datosParciales}, solo los campos no nulos
-     * sustituyen valores.
-     * Si {@code nuevasParticipaciones} no es null, reemplaza por completo la nómina
-     * de autores (debe ser no vacía).
-     */
     @Transactional
     public Articulo actualizar(String doi, Articulo datosParciales, List<ArticuloAutor> nuevasParticipaciones) {
         Articulo articulo = articuloRepository.findById(doi)
