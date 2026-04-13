@@ -28,9 +28,6 @@ public class RevistaController {
         return revistaService.listarTodas();
     }
 
-    /**
-     * Artículos de una revista. Paginación: {@code page}, {@code size}, {@code sort} (ej. {@code sort=titulo,asc}).
-     */
     @GetMapping("/{issn}/articulos")
     public Page<Articulo> listarArticulos(@PathVariable String issn, Pageable pageable) {
         return revistaService.listarArticulosPorIssn(issn, pageable);

@@ -30,10 +30,6 @@ public class RevistaService {
         return revistaRepository.findAll();
     }
 
-    /**
-     * Artículos de una revista con paginación estándar de Spring ({@link Pageable}:
-     * página, tamaño, orden).
-     */
     public Page<Articulo> listarArticulosPorIssn(String issn, Pageable pageable) {
         if (!revistaRepository.existsById(issn)) {
             throw new EntityNotFoundException("Revista no encontrada: " + issn);
