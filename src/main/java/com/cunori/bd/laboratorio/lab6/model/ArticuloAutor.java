@@ -2,7 +2,6 @@ package com.cunori.bd.laboratorio.lab6.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import jakarta.persistence.JoinColumn;
@@ -23,11 +22,11 @@ public class ArticuloAutor {
     private Long idAutor;
 
     @ManyToOne
-    @JoinColumn(name = "doi_articulo", referencedColumnName = "doi")
+    @JoinColumn(name = "doi_articulo", referencedColumnName = "doi", insertable = false, updatable = false)
     private Articulo articulo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_autor", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "id_autor", referencedColumnName = "id", insertable = false, updatable = false)
     private Autor autor;
 
     @Column(name = "orden_autoria")
