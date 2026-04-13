@@ -1,0 +1,26 @@
+info:
+  name: Actualizar Autor
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/api/autores
+  body:
+    type: json
+    data: |-
+      {
+          "afiliacion": "Universidad Nacional",
+          "biografia": "Doctor en Ciencias de la Computación con 15 años de experiencia en IA",
+          "correo": "juan.perez@universidad.edu",
+          "id": 1,
+          "nombreCompleto": "Juan Pérez Granados",
+          "pais": "España"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

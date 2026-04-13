@@ -1,0 +1,40 @@
+info:
+  name: Crear Artículo
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:8080/api/articulos
+  body:
+    type: json
+    data: |-
+      {
+        "articulo": {
+          "doi": "10.3456",
+          "titulo": "Educación Inclusiva: Retos y Oportunidades - Nueva Edición",
+          "resumen": "Estrategias para atender la diversidad en el aula",
+          "fechaRecepcion": "2024-03-10",
+          "fechaPublicacion": null,
+          "numeroPaginas": 20,
+          "idioma": "Español",
+          "estado": "EN_REVISION",
+          "revista": {
+            "issn": "3456-7890"
+          }
+        },
+        "participaciones": [
+          {
+            "idAutor": 1,
+            "ordenAutoria": 1,
+            "esCorresponsal": true
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
